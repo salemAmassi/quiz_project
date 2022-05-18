@@ -1,5 +1,49 @@
 <?php
+require_once('../config.php');
+//edit validation: 
+//basic update 
+//TODO: make more validation in signup on photo size, 
 
+
+//get old student data and put it in fields: 
+$userId = $_GET['id'];
+$checkStudent= "SELECT * from student where id = $userId ";
+$student  = $connection->query($checkStudent)->fetch_assoc(); 
+$oldUserName =$student['name'];
+$oldEmail =$student['email'];
+$oldGpa =$student['gpa'];
+$oldPhoto = $student['profile_img'];
+$oldPassword = $student['password'];
+echo $oldPhoto; 
+//if there is post request! 
+//change photo needs work! 
+if(isset($_POST['submit_edit'])){
+    $userName = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $gpa = $_POST['gpa'];
+		$photo_name = $_FILES['photo']['name'];
+		$tempName = $_FILES['photo']['tmp_name'];
+		$extenstions = array('png','jpg','jpeg');
+		$extension = pathinfo($photo_name, PATHINFO_EXTENSION);
+		$newName = $oldPhoto; 
+		$output =  md5(time()).$extension;
+		echo $output;
+		copy( $_FILES['photo']['tmp_name'] , $output );
+		echo (move_uploaded_file($tempName, 'images/'. $newName));
+		$updateStudent  = 
+		"UPDATE student set name ='$userName',
+		email = '$email',
+		password = '$password',
+		gpa = $gpa,
+		profile_img = '$newName'
+		where id = $userId";
+		if($connection->query($updateStudent)){
+			header('location:index.php');
+		}else 
+		echo '<script>alert("update operation failed")</script>';
+    
+}
 
 
 ?>
@@ -11,7 +55,7 @@
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>profile edit data and skills - Bootdey.com</title>
+    <title>Edit Profile data</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,27 +69,26 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="d-flex flex-column align-items-center text-center">
-								<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+								<img src="<?php echo '../images/'.$oldPhoto?>" alt="<?php echo $oldUserName?>"  class="rounded-circle p-1 bg-primary" width="300">
 								<div class="mt-3">
-									<h4>John Doe</h4>
-									<p class="text-secondary mb-1">Full Stack Developer</p>
-									<p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+									<h4><?php $userName?></h4>
+									<p class="text-secondary mb-1">Student</p>
 								</div>
 							</div>
 							<hr class="my-4">
-							
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-8">
 					<div class="card">
+						<form  method="post" action ="<?php $_SERVER['PHP_SELF']?>" enctype="multipart/form-data" >
 						<div class="card-body">
 							<div class="row mb-3">
 								<div class="col-sm-3">
-									<h6 class="mb-0">Full Name</h6>
+									<h6 class="mb-0">Name</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="John Doe">
+									<input type="text" class="form-control" value="<?php echo $oldUserName;?>"  name="username">
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -53,74 +96,49 @@
 									<h6 class="mb-0">Email</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="john@example.com">
+									<input type="text" class="form-control"  value="<?php echo $oldEmail;?>" name="email">
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-sm-3">
-									<h6 class="mb-0">Phone</h6>
+									<h6 class="mb-0">Gpa</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="(239) 816-9029">
+									<input type="text" class="form-control"  value="<?php echo $oldGpa;?>"  name="gpa">
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-sm-3">
-									<h6 class="mb-0">Mobile</h6>
+									<h6 class="mb-0">Password</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="(320) 380-4539">
+									<input type="password" class="form-control"  value="<?php echo $oldPassword;?>"  name="password">
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-sm-3">
-									<h6 class="mb-0">Address</h6>
+									<h6 class="mb-0">Photo</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="Bay Area, San Francisco, CA">
+									<input type="file"  value="<?php echo $image; ?>"  name="photo">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-3"></div>
 								<div class="col-sm-9 text-secondary">
-									<input type="button" class="btn btn-primary px-4" value="Save Changes">
+									<input type="submit" class="btn btn-primary px-4" value="Save Changes" name="submit_edit">
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="card">
-								<div class="card-body">
-									<h5 class="d-flex align-items-center mb-3">Project Status</h5>
-									<p>Web Design</p>
-									<div class="progress mb-3" style="height: 5px">
-										<div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<p>Website Markup</p>
-									<div class="progress mb-3" style="height: 5px">
-										<div class="progress-bar bg-danger" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<p>One Page</p>
-									<div class="progress mb-3" style="height: 5px">
-										<div class="progress-bar bg-success" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<p>Mobile Template</p>
-									<div class="progress mb-3" style="height: 5px">
-										<div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<p>Backend API</p>
-									<div class="progress" style="height: 5px">
-										<div class="progress-bar bg-info" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
+		</form>
 		</div>
 	</div>
+
+			
 
 <style type="text/css">
 body{
