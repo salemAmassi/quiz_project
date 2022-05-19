@@ -32,7 +32,7 @@ $quizId = $_GET['quizId'];
               </ol>
             </nav>
             <!-- /Breadcrumb -->
-      
+      <!--  -->
             <div class="row gutters-sm">
                 <?php $sql = "SELECT q.title as Quiz_Title  , q.created_time as Craeted_Time , s.name as Subject_Name 
                 FROM (quiz as q JOIN subject as s ON q.subjectId = s.id ) JOIN admin as a ON a.id = q.adminId WHERE a.id= $adminId";
