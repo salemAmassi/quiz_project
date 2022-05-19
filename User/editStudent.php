@@ -22,21 +22,21 @@ if(isset($_POST['submit_edit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $gpa = $_POST['gpa'];
-		$photo_name = $_FILES['photo']['name'];
-		$tempName = $_FILES['photo']['tmp_name'];
-		$extenstions = array('png','jpg','jpeg');
-		$extension = pathinfo($photo_name, PATHINFO_EXTENSION);
-		$newName = $oldPhoto; 
-		$output =  md5(time()).$extension;
-		echo $output;
-		copy( $_FILES['photo']['tmp_name'] , $output );
-		echo (move_uploaded_file($tempName, 'images/'. $newName));
+		// $photo_name = $_FILES['photo']['name'];
+		// $tempName = $_FILES['photo']['tmp_name'];
+		// $extenstions = array('png','jpg','jpeg');
+		// $extension = pathinfo($photo_name, PATHINFO_EXTENSION);
+		// $newName = $oldPhoto; 
+		// $output =  md5(time()).$extension;
+		// echo $output;
+		// copy( $_FILES['photo']['tmp_name'] , $output );
+		// echo (move_uploaded_file($tempName, 'images/'. $newName));
 		$updateStudent  = 
 		"UPDATE student set name ='$userName',
 		email = '$email',
 		password = '$password',
-		gpa = $gpa,
-		profile_img = '$newName'
+		gpa = $gpa
+		-- profile_img = '$newName'
 		where id = $userId";
 		if($connection->query($updateStudent)){
 			header('location:index.php');
