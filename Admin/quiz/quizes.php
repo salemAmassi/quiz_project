@@ -60,7 +60,7 @@ $quizId = $_GET['quizId'];
                       <?php   echo '
                       </div><hr>
                       <form method="POST" action="">
-                      <input type="submit" value="Delete" name="subDelete"/>
+                      <a href="" target="_blank">This is a link</a>
                       </form>
                      </div>
                      
@@ -132,14 +132,7 @@ $quizId = $_GET['quizId'];
   .shadow-none {
       box-shadow: none!important;
   }
-  input[type=submit] {
-    padding:5px 15px; 
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
-}
+  
   </style>
   
   <script type="text/javascript">
