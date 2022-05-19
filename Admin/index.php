@@ -1,6 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['username'])){
 
-
+    
+}
 
 
 ?>
@@ -9,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("header.php");
+require_once("header.php");
 ?>
 <body class="sb-nav-fixed">
     
@@ -87,7 +90,7 @@ include("header.php");
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">QUIZES</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="Admin\quiz\quizes.php?id=<?php? echo >">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -110,16 +113,6 @@ include("header.php");
                                             <th>Update</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <tr>
                                             <td>Tiger Nixon</td>
@@ -166,7 +159,7 @@ include("header.php");
             </div>
         </div>
 <?php
-include("footer.php")
+require_once("footer.php")
 ?>
 </body>
 </html>

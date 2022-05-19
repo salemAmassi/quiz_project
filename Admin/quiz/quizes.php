@@ -2,9 +2,8 @@
 require_once('../../config.php');
 //Salem: get all quizes and display them 
 
-
-$adminId = $_GET['id'];
-$quizId = $_GET['quizId'];
+//$_SESSION['id'];
+$adminId = 1;
 
 ?>
 <!DOCTYPE html>
@@ -34,12 +33,13 @@ $quizId = $_GET['quizId'];
             <!-- /Breadcrumb -->
       <!--  -->
             <div class="row gutters-sm">
-                <?php $sql = "SELECT q.title as Quiz_Title  , q.created_time as Craeted_Time , s.name as Subject_Name 
+                <?php $sql = "SELECT q.title as Quiz_Title , q.id as id_quiz  , q.created_time as Craeted_Time , s.name as Subject_Name 
                 FROM (quiz as q JOIN subject as s ON q.subjectId = s.id ) JOIN admin as a ON a.id = q.adminId WHERE a.id= $adminId";
                     $sqlResult = $connection->query($sql);
 
                     if($sqlResult->num_rows > 0){
                       while($row = $sqlResult->fetch_assoc()){ 
+                        $quizId = $row['id_quiz'];
                         $title = $row['Quiz_Title'];
                         $created_time = $row['Craeted_Time'];
                         $subjectName = $row['Subject_Name'];
@@ -60,7 +60,7 @@ $quizId = $_GET['quizId'];
                       <?php   echo '
                       </div><hr>
                       <form method="POST" action="">
-                      <a href="" target="_blank">This is a link</a>
+                      <a class="delete" href="quizDelete.php?id='; echo $quizId.'"';  ?> <?php echo '>Delete</a>
                       </form>
                      </div>
                      
@@ -73,8 +73,7 @@ $quizId = $_GET['quizId'];
                 ?>
 
               </div>   
-              </div>
-              
+            </div>
           </div>
       </div>
   
@@ -132,6 +131,20 @@ $quizId = $_GET['quizId'];
   .shadow-none {
       box-shadow: none!important;
   }
+  .delete:link, .delete:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid CornflowerBlue;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.delete:hover, .delete:active {
+  background-color: CornflowerBlue;
+  color: white;
+}
   
   </style>
   
