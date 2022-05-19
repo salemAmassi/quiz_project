@@ -6,7 +6,7 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to bottom, #c6c5cf, #b0aae7, #3434ee);
 }
 .main{
 	width: 350px;
@@ -90,3 +90,17 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+.delete:link, .delete:visited {
+	background-color: white;
+	color: black;
+	border: 2px solid green;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+  }
+  
+  .delete:hover, .delete:active {
+	background-color: green;
+	color: white;
+  }

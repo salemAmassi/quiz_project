@@ -1,6 +1,8 @@
 <?php
-
-
+require_once("../config.php"); 
+if(!isset($_SESSION['username'])){
+header('location:../index.php');
+}
 
 
 ?>
@@ -9,13 +11,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("header.php");
+require_once("header.php");
 ?>
 <body class="sb-nav-fixed">
     
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="home.php">ADMIN PAGE</a>
+            <a class="navbar-brand ps-3" href="index.php"><?php echo $_SESSION['username'];?></a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -39,7 +41,7 @@ include("header.php");
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="home.php">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -59,7 +61,6 @@ include("header.php");
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="login.html">Login</a>
                                             <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -78,7 +79,7 @@ include("header.php");
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">SUBJECTS</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="\subject\index.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="subject\index.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -88,7 +89,7 @@ include("header.php");
                                     <div class="card-body">QUIZES</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" 
-                                        href="Admin\quiz\quizes.php?id=<?php echo$adminId;?>">View Details</a>
+                                        href="quiz\quizes.php?adminId=<?php echo $_SESSION['id']; ?>">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -112,14 +113,27 @@ include("header.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                            <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>$86,000</td>
-                                        </tr>
+                                        <?php
+                                        $getAllStudents = "SELECT * FROM student"; 
+                                        $result = $connection->query($getAllStudents);
+                                        if($result->num_rows>0){
+                                             while($student = $result->fetch_assoc()){
+                                                 $id = $student['id']; 
+                                                    echo "<tr>"; 
+                                                    echo "<td>". $id."</td>";
+                                                    echo "<td>". $student['name']."</td>";
+                                                    echo "<td>". $student['email']."</td>";
+                                                    echo "<td>". $student['gpa']."</td>";
+                                                    echo "<td>".$student['register_date']."</td>";
+                                                   echo "<td>"."<a href='student\studentDelete.php?id=".$id."'>Delete</a>"."</td>"; 
+                                      
+                                                    echo "</tr>"; 
+                                                }
+
+                                        }
+
+
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -141,7 +155,7 @@ include("header.php");
             </div>
         </div>
 <?php
-include("footer.php")
+require_once("footer.php")
 ?>
 </body>
 </html>
