@@ -47,7 +47,7 @@ if(isset($_POST['submit_signup'])){
 <body>
 	<div class="main">  	
 		<!-- <input type="checkbox" id="chk" aria-hidden="true"> -->
-			<div class="signup">
+			<div>
 				<form method="post" action ="<?php $_SERVER['PHP_SELF']?>" enctype="multipart/form-data">
 					<label for="chk" aria-hidden="true">Sign up</label>
 					<input type="text" name="username" placeholder="User name" required="">
@@ -60,7 +60,7 @@ if(isset($_POST['submit_signup'])){
 			</div>
 
 	</div>
-	<div class="login">
+	<div>
 				<form method="post" action ="validateLogin.php">
 					<label for="chk" aria-hidden="true">Login</label>
 					<input type="email" name="email" placeholder="Email" required="">
