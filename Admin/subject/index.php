@@ -12,6 +12,24 @@ require_once("../../config.php");?>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
       <link href="../style.css" rel = "stylesheet">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+      <style>
+        .delete:link, .delete:visited {
+          background-color: white;
+          color: black;
+          border: 2px solid rgb(62, 135, 163);
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          width: 30%;
+          margin: 0px 0px 10px 10px;
+          }
+  
+        .delete:hover, .delete:active {
+          background-color: rgb(62, 135, 163);
+          color: white;
+        }
+      </style>
   </head>
   <body>
   
@@ -47,8 +65,8 @@ if(isset($_SESSION['username'])){
                 '?>
                  
                 <?php   echo '
-                </div><hr>
-                <a class="delete" href="../quiz/quizes.php?subjectId='; echo $subjectId.'"';  ?> <?php echo '>Get Quizes</a>
+                </div>
+                <a class="delete" href="quizes.php?subjectId='; echo $subjectId.'"';  ?> <?php echo '>Get Quizes</a>
                </div>
               </div>
               

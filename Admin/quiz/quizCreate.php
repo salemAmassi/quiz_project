@@ -1,11 +1,16 @@
-
+<?php
+require_once("../../config.php"); 
+if(!isset($_SESSION['username']))
+  header("location: ../../index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
+	<title>Create Quiz</title>
+  <?php require_once("cssLinks.php") ;?>
 </head>
 <body>
 <div class="row">
@@ -19,7 +24,7 @@
 <div class="form-group">
   <label class="col-md-12 control-label" for="name"></label>  
   <div class="col-md-12">
-  <input id="name" name="name" placeholder="Enter Quiz title" class="form-control input-md" type="text">
+  <input id="name" name="quizName" placeholder="Enter Quiz title" class="form-control input-md" type="text">
     
   </div>
 </div>
@@ -44,39 +49,25 @@
   </div>
 </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="wrong"></label>  
-  <div class="col-md-12">
-  <input id="wrong" name="wrongMark" placeholder="Enter minus marks on wrong answer without sign" class="form-control input-md" min="0" type="number">
-    
-  </div>
-</div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-12 control-label" for="time"></label>  
+  <label class="col-md-12 control-label" for="subject"></label>  
   <div class="col-md-12">
-  <input id="time" name="time" placeholder="Enter time limit for test in minute" class="form-control input-md" min="1" type="number">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="tag"></label>  
-  <div class="col-md-12">
-  <input id="tag" name="tag" placeholder="Enter #tag which is used for searching" class="form-control input-md" type="text">
-    
-  </div>
-</div>
-
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="desc"></label>  
-  <div class="col-md-12">
-  <textarea rows="8" cols="8" name="desc" class="form-control" placeholder="Write description here..."></textarea>  
+    <select id="subject" name="subject" class="form-control input-md">
+<?php
+    $query = "SELECT * FROM subject";
+    $subjectResult = $connection->query($query);
+    if($subjectResult->num_rows>0){
+      while($row= $subjectResult->fetch_assoc()){
+        $name = $row['name'];
+        echo '<option value="'.$name.'">'.$name.'</option>';
+        echo $name; 
+      }
+    }else 
+    echo "nooo";
+?>
+    </select>
   </div>
 </div>
 
