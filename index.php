@@ -1,5 +1,4 @@
 <?php
-session_start();
 //valdiate the signup operation 
 require_once('config.php');
 //signup validation: 
