@@ -119,7 +119,7 @@ require_once('../../config.php');
                         <?php   echo '
                         </div><hr>
                         <form method="POST" action="">
-                        <a class="delete" href="quizDelete.php?id='; echo $quizId.'"';  ?> <?php echo '>Delete</a>
+                        <a class="delete" href="../quiz/index.php?id='; echo $quizId.'"';  ?> <?php echo '>Take Quiz</a>
                         </form>
                        </div>
                        

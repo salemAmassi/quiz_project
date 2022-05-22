@@ -100,11 +100,10 @@
 
             <div class="row align-items-center mr-auto">
                 <div class="col-md-4">
-                    <h6 class="xs-font mb-0">nobis dolorem sapiente evenie.</h6>
                     <h3 class="section-title">About Us</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sunt, unde aperiam aliquid quia repudiandae, ex harum quis amet delectus maxime, tempora possimus aut laboriosam magni corrupti labore. Doloremque, sit?</p>
-
-                    <a href="javascript:void(0)">Read more...</a>
+                    <p>
+                        We are a team that love programming and we make quizzes in various subjects 
+</p>
                 </div>
                 <div class="col-sm-6 col-md-4 ml-auto">
                     <div class="widget">
@@ -113,7 +112,7 @@
                         </div>
                         <div class="infos-wrapper">
                             <h4 class="text-primary">15+</h4>
-                            <p>onsectetur perspiciatis</p>
+                            <p>subjects</p>
                         </div>
                     </div>
                     <div class="widget">
@@ -122,7 +121,7 @@
                         </div>
                         <div class="infos-wrapper">
                             <h4 class="text-primary">125+</h4>
-                            <p>onsectetur perspiciatis</p>
+                            <p>users</p>
                         </div>
                     </div>
                 </div>
@@ -133,7 +132,7 @@
                         </div>
                         <div class="infos-wrapper">
                             <h4 class="text-primary">3434+</h4>
-                            <p>onsectetur perspiciatis</p>
+                            <p>quzzes</p>
                         </div>
                     </div>
                     <div class="widget">
@@ -142,7 +141,7 @@
                         </div>
                         <div class="infos-wrapper">
                             <h4 class="text-primary">80+</h4>
-                            <p>onsectetur perspiciatis</p>
+                            <p>visits</p>
                         </div>
                     </div>
                 </div>
@@ -150,50 +149,10 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <h6 class="xs-font mb-0">Blanditiis unde illum earum</h6>
-            <h3 class="section-title mb-4">Expertises</h3>
-
-            <div class="row text-center">
-                <div class="col-lg-4">
-                    <a href="javascript:void(0)" class="card border-0 text-dark">
-                        <img class="card-img-top" src="indexHandle/assets/imgs/img-5.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
-                        <span class="card-body">
-                            <h4 class="title mt-4">Codding &amp; Designing</h4>
-                            <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="javascript:void(0)" class="card border-0 text-dark">
-                        <img class="card-img-top" src="indexHandle/assets/imgs/img-6.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
-                        <span class="card-body">
-                            <h4 class="title mt-4">Graphic Design</h4>
-                            <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="javascript:void(0)" class="card border-0 text-dark">
-                        <img class="card-img-top" src="indexHandle/assets/imgs/img-7.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
-                        <span class="card-body">
-                            <h4 class="title mt-4">Development</h4>
-                            <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
- 
-
-
     <section class="section" id="testmonial">
         <div class="container">
             <h6 class="xs-font mb-0">Culpa perferendis excepturi.</h6>
-            <h3 class="section-title">Testmonials</h3>
+            <h3 class="section-title">Our Team</h3>
 
             <div id="owl-testmonial" class="owl-carousel owl-theme mt-4">
                 <div class="item">
@@ -201,12 +160,11 @@
                         <img src="indexHandle/assets/imgs/avatar1.jpg" class="avatar" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
                         <div class="des">
                             <h5 class="ti-quote-left font-weight-bold"></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ea facere voluptatum corrupti doloremque odit sequi labore rerum maiores libero.adipisicing elit. Vitae quasi voluptatem sed quaerat dolorum architecto reiciendis magni laboriosam, illum, nobis, quae dolor, ducimus libero! Sapiente deleniti sit dolor, ex possimus.</p>
                             <h5 class="ti-quote-left text-right font-weight-bold"></h5>
 
                             <div class="line"></div>
                             <h6 class="name">Abdullah AboSido</h6>
-                            <h6 class="xs-font">Full stack developer</h6>
+                            <h6 class="xs-font">Frontend eveloper</h6>
                         </div>
                     </div>
                 </div>
@@ -215,12 +173,24 @@
                         <img src="indexHandle/assets/imgs/avatar2.jpg" class="avatar" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
                         <div class="des">
                             <h5 class="ti-quote-left font-weight-bold"></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ea facere voluptatum corrupti doloremque odit sequi labore rerum maiores libero.adipisicing elit. Vitae quasi voluptatem sed quaerat dolorum architecto reiciendis magni laboriosam, illum, nobis, quae dolor, ducimus libero! Sapiente deleniti sit dolor, ex possimus.</p>
                             <h5 class="ti-quote-left text-right font-weight-bold"></h5>
 
                             <div class="line"></div>
                             <h6 class="name">Salem Amassi</h6>
-                            <h6 class="xs-font">Java Programmer</h6>
+                            <h6 class="xs-font">Backend developer</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="textmonial-item">
+                        <img src="indexHandle/assets/imgs/avatar3.jpeg" class="avatar" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
+                        <div class="des">
+                            <h5 class="ti-quote-left font-weight-bold"></h5>
+                            <h5 class="ti-quote-left text-right font-weight-bold"></h5>
+
+                            <div class="line"></div>
+                            <h6 class="name">Omar Abedalmoneam</h6>
+                            <h6 class="xs-font">Database developer</h6>
                         </div>
                     </div>
                 </div>
