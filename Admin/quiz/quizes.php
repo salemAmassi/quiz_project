@@ -1,10 +1,5 @@
 <?php
 require_once('../../config.php');
-//Salem: get all quizes and display them 
-
-
-// 
-
 
 ?>
 <!DOCTYPE html>
@@ -14,11 +9,30 @@ require_once('../../config.php');
       <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
       <!--  All snippets are MIT license http://bootdey.com/license -->
       <title>Quizes Page</title>
+      <link rel="icon" href="\quiz_project\online-course.png">
       <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
       <link href="../style.css" rel = "stylesheet">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+      <style>
+        .delete:link, .delete:visited {
+          background-color: white;
+          color: black;
+          border: 2px solid rgb(62, 135, 163);
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          width: 30%;
+          margin: 0px 0px 10px 10px;
+          }
+  
+        .delete:hover, .delete:active {
+          background-color: rgb(62, 135, 163);
+          color: white;
+        }
+      </style>
   </head>
   <body>
   

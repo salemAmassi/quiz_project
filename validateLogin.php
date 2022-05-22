@@ -14,7 +14,7 @@ if(strpos($email,"teacher@gmail.com")){//user is admin:
         $row = $adminResult->fetch_assoc();
         $_SESSION['username'] = $row['name'];
         $_SESSION['id'] = $row['id'];
-        header('location:Admin\index.php');
+        header('location:Admin/index.php');
     }else 
     echo '<script>alert("couldnt find admin")</script>';
 }elseif(strpos($email,"student@gmail.com")){//user is student:
@@ -24,7 +24,7 @@ if(strpos($email,"teacher@gmail.com")){//user is admin:
         $row = $studentResult->fetch_assoc();
         $_SESSION['username'] = $row['name'];
         $_SESSION['id'] = $row['id'];
-        header('location:User\index.php');
+        header('location:User/index.php');
     }else 
     header('location:index.php');
     
