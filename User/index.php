@@ -42,7 +42,7 @@ $id = $_SESSION['id'];
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="home.php">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -80,7 +80,7 @@ $id = $_SESSION['id'];
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">SUBJECTS</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="subjects.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="subject/index.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

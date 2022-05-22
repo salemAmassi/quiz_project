@@ -12,10 +12,6 @@ if($deleteResult){
 }else
 echo '<script>alert("delete operation failed")</script>';
 // header( "refresh:5;url=index.php" );
-
-
-
-
 }
 
 
