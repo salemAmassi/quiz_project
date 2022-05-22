@@ -1,6 +1,6 @@
 <?php
 session_start();
-$connection = new mysqli('localhost','root','','dummy_db');
+$connection = new mysqli('localhost','root','','quiz_database');
 if(!$connection){
    echo $connection->error();
 }
