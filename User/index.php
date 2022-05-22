@@ -90,7 +90,7 @@ $id = $_SESSION['id'];
                                     <div class="card-body">QUIZES</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" 
-                                        href="quizes.php">View Details</a>
+                                        href="quiz/quizes.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

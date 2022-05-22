@@ -1,5 +1,5 @@
 <?php
-require_once('../config.php');
+require_once('../../config.php');
 //Salem: get all quizes and display them 
 
 ?>
@@ -24,7 +24,7 @@ require_once('../config.php');
             <!-- Breadcrumb -->
             <nav aria-label="breadcrumb" class="main-breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Quizes</li>
               </ol>
             </nav>
@@ -40,31 +40,24 @@ require_once('../config.php');
                         $title = $row['quiz_title'];
                         $subjectName = $row['subject_name'];
                         $qId = $row['qid'];
-
-                    echo '
-                  <div class="col-sm-6 mb-3">
-                    <div class="card h-100">
-                      <div class="card-body">
+                        echo '
+                        <div class="col-sm-6 mb-3">
+                        <div class="card h-100">
+                        <div class="card-body">
                         <h5 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Registered Quiz </i>';?><?php echo $title; ?> <?php echo '</h5>
                         <h6>Subject</h6>
-                        <div class="col-sm-9 text-secondary">'; ?>
-                      <?php 
+                        <div class="col-sm-9 text-secondary">';
+                    
                       echo $subjectName; 
                       echo '
                       </div><hr>
-                      <a href="takeQuiz.php?id="'
-                      ?>
-                      <?php echo $qId; ?><?php echo ">Take quiz</a>
+                      <a href="index.php?id='.$qId.'">Take quiz</a>
                      </div>
                      
                     </div>
                     
                   </div>
-                "; 
-                  }
-                }
-                ?>
-
+              
               </div>   
               </div>
           </div>
@@ -125,9 +118,4 @@ require_once('../config.php');
   }
   
   </style>
-  
-  <script type="text/javascript">
-  
-  </script>
-  </body>
-  </html>
+  ';}} ?>

@@ -43,7 +43,7 @@
                         <a class="nav-link" href="#contact">Login</a>
                     </li>
                     <li class="nav-item ml-0 ml-lg-4">
-                        <a class="nav-link btn btn-primary" href="signup.php" target = "_blank">SignUp</a>
+                        <a class="nav-link btn btn-primary" href="signup.php" >SignUp</a>
                     </li>
                 </ul>
             </div>

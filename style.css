@@ -6,7 +6,7 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #95180f, #b7644a, #95180f);
+	background: #6c757d;	
 }
 .main{
 	width: 100%;
@@ -56,7 +56,7 @@ input{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #39251B;
+	background:#590fe4;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -66,8 +66,8 @@ input{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-button:hover{
-	background: #6d44b8;
+.submit:hover{
+	background: #f06161;
 }
 .login{
 	height: 460px;
