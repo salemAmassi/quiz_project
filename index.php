@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with Ollie landing page.">
     <meta name="author" content="Devcrud">
-    <title>Ollie Landing page | Free Bootstrap 4.3.x landing page</title>
+	<link rel="icon" href="online-course.png">
+    <title>Quizzes Center</title>
 
     <!-- font icons -->
     <link rel="stylesheet" href="indexHandle/assets/vendors/themify-icons/css/themify-icons.css">
@@ -42,7 +43,7 @@
                         <a class="nav-link" href="#contact">Login</a>
                     </li>
                     <li class="nav-item ml-0 ml-lg-4">
-                        <a class="nav-link btn btn-primary" href="signup.php">SignUp</a>
+                        <a class="nav-link btn btn-primary" href="signup.php" target = "_blank">SignUp</a>
                     </li>
                 </ul>
             </div>
@@ -204,7 +205,7 @@
                             <h5 class="ti-quote-left text-right font-weight-bold"></h5>
 
                             <div class="line"></div>
-                            <h6 class="name">Emma Re</h6>
+                            <h6 class="name">Abdullah AboSido</h6>
                             <h6 class="xs-font">Full stack developer</h6>
                         </div>
                     </div>
@@ -218,22 +219,8 @@
                             <h5 class="ti-quote-left text-right font-weight-bold"></h5>
 
                             <div class="line"></div>
-                            <h6 class="name">John Doe</h6>
-                            <h6 class="xs-font">Graphic Designer</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="textmonial-item">
-                        <img src="indexHandle/assets/imgs/avatar3.jpg" class="avatar" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
-                        <div class="des">
-                            <h5 class="ti-quote-left font-weight-bold"></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ea facere voluptatum corrupti doloremque odit sequi labore rerum maiores libero.adipisicing elit. Vitae quasi voluptatem sed quaerat dolorum architecto reiciendis magni laboriosam, illum, nobis, quae dolor, ducimus libero! Sapiente deleniti sit dolor, ex possimus.</p>
-                            <h5 class="ti-quote-left text-right font-weight-bold"></h5>
-
-                            <div class="line"></div>
-                            <h6 class="name">Emily Roe</h6>
-                            <h6 class="xs-font">Freelancer</h6>
+                            <h6 class="name">Salem Amassi</h6>
+                            <h6 class="xs-font">Java Programmer</h6>
                         </div>
                     </div>
                 </div>
@@ -244,25 +231,23 @@
 
 <div class="container">
 	<h3 class="section-title mb-5">Login</h3>
-	<div class="row align-items-center justify-content-between">
-		<div class="col-md-8 col-lg-7">
+<div class="row align-items-center justify-content-between">
+	<div class="col-md-8 col-lg-7">
 		<div class="row align-items-center justify-content-between">
-                <div class="col-md-8 col-lg-7">
-                    <form class="contact-form" method="post" action= "validateLogin.php"><!-- action post -->
-                        <div class="form-row">
-							<div class="col form-group">
-							<input type="email" name="email" class="form-control" placeholder="Email" required="">
-							</div>
-							<br>
-                        <div class="col form-group">
-							<input type="password" name="password" class="form-control" placeholder="Password" required="">
-							</div>
-							<br>
-							<div class="form-group">
-							<input type="submit" name="submit_login" class="form-control" value="Login" class="submit">
-							</div>
-							</div>
-				</form>
+            <div class="col-md-8 col-lg-7">
+                <form class="contact-form" method="post" action= "validateLogin.php"><!-- action post -->
+                    <div class="col form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email" required="">
+                    </div>
+                    <hr>
+                    <div class="col form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                    <input type="submit" name="submit_login" class="form-control" value="Login" class="submit">
+                    </div>
+                </form>
 			</div>
 		</div>
 	</div>

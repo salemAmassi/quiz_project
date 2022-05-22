@@ -39,8 +39,9 @@ if(isset($_POST['submit_signup'])){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Slide Navbar</title>
+	<title>Sign Up</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="online-course.png">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>

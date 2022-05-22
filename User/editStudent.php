@@ -14,7 +14,7 @@ $oldEmail =$student['email'];
 $oldGpa =$student['gpa'];
 $oldPhoto = $student['profile_img'];
 $oldPassword = $student['password'];
-echo $oldPhoto; 
+// echo $oldPhoto; 
 //if there is post request! 
 //change photo needs work! 
 if(isset($_POST['submit_edit'])){
@@ -56,6 +56,7 @@ if(isset($_POST['submit_edit'])){
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
     <title>Edit Profile data</title>
+	<link rel="icon" href="\quiz_project\online-course.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">

@@ -1,7 +1,7 @@
 
 <?php
 require_once("../config.php");
-session_start();
+// session_start();
 $stdId = $_GET['id'];
 if(isset($_SESSION['username'])){
   $sql = "SELECT * FROM student WHERE id =".$stdId;
@@ -27,9 +27,10 @@ header('location:../index.php');
   <html lang="en">
   <head>
       <meta charset="utf-8">
-      <title>profile</title>
+      <title>Student Profile</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <link rel="icon" href="\quiz_project\online-course.png">
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
   </head>
@@ -41,7 +42,6 @@ header('location:../index.php');
             <nav aria-label="breadcrumb" class="main-breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
                 <li class="breadcrumb-item active" aria-current="page">User Profile</li>
               </ol>
             </nav>
